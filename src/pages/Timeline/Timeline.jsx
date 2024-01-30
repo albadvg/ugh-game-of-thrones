@@ -13,10 +13,10 @@ const Timeline = () => {
             <div className="timeline">
                 <div className="timeline-count">
                     <span className="timeline-count__num">17</span>
-                    {characters.sort((a, b) => a.age + b.age).map((char, i) => (
-                        <p key={i}>{char.name}</p>
-                    ))}
                 </div>
+                {characters.sort((a, b) => a.age + b.age).map((char, i) => (
+                    <p key={i}>{char.name}</p>
+                ))}
 
             </div>
         </SimpleBar>
