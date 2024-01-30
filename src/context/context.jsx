@@ -3,7 +3,7 @@ import axios from "axios"
 
 export const GotContext = createContext()
 
-const baseUrl = "https://http://localhost:3000/"
+const baseUrl = "http://localhost:3000/"
 
 export const GotContextProvider = ({ children }) => {
     const [characters, setCharacters] = useState([])
@@ -21,7 +21,7 @@ export const GotContextProvider = ({ children }) => {
 
     useEffect(() => {
         const getHouses = async () => {
-            const housesApi = await axios.get(`${baseUrl}/houses`)
+            const housesApi = await axios.get(`${baseUrl}houses`)
             setHouses(housesApi.results)
         }
         getHouses()
