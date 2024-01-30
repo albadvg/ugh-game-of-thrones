@@ -16,12 +16,12 @@ const Home = () => {
 
     return (
         <>
-            {/* <SimpleBar style={{ maxHeight: 300 }}>
+            <SimpleBar style={{ maxHeight: 300 }}>
                 <h1>{t("titulo")}</h1>
                 <button onClick={changeLanguage}>cambiar</button>
                 <button onClick={changeLanguageTo}>cambiar</button>
 
-            </SimpleBar> */}
+            </SimpleBar>
         </>
     )
 }
