@@ -13,8 +13,8 @@ export const GotContextProvider = ({ children }) => {
 
     useEffect(() => {
         const getCharacters = async () => {
-            const charactersApi = await axios.get(`${baseUrl}characters`)
-            setCharacters(charactersApi.results)
+            const charactersApi = await axios.get(`${baseUrl}characters`);
+            setCharacters(charactersApi.data)
         }
         getCharacters()
     }, [filter])
@@ -22,7 +22,7 @@ export const GotContextProvider = ({ children }) => {
     useEffect(() => {
         const getHouses = async () => {
             const housesApi = await axios.get(`${baseUrl}houses`)
-            setHouses(housesApi.results)
+            setHouses(housesApi.data)
         }
         getHouses()
     }, [])

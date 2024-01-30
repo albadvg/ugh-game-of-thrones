@@ -1,10 +1,25 @@
-import React from "react"
+import { useContext } from "react";
+import SimpleBar from "simplebar-react";
+import 'simplebar-react/dist/simplebar.min.css';
+import './Timeline.scss';
+import { GotContext } from "../../context/context";
 
 const Timeline = () => {
+
+    const  {characters} = useContext(GotContext);
+    
     return (
-        <div>
-            <h1>Hola soy una pagina</h1>
-        </div>
+        <SimpleBar style={{ maxHeight: 900 }}>
+            <div className="timeline">
+                <div className="timeline-count">
+                    <span className="timeline-count__num">17</span>
+                    {characters.sort((a, b) => a.age + b.age).map((char, i) => (
+                        <p key={i}>{char.name}</p>
+                    ))}
+                </div>
+
+            </div>
+        </SimpleBar>
     )
 }
 
