@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Game of Thrones";
+    src: url("");
+}
+// ????????????
+// public\fonts\Game-of-Thrones.ttf
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Game of Thrones";
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    font-family: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
