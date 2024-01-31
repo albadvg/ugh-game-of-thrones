@@ -2,8 +2,11 @@
     font-family: "Game of Thrones";
     src: url("fonts/Game-of-Thrones.ttf");
 }
-// ????????????
-// public\fonts\Game-of-Thrones.ttf
+
+@font-face {
+    font-family: 'FeDP';
+    src: url('fonts/FeDPsc2.ttf');
+}
 
 html {
     box-sizing: border-box;
@@ -20,6 +23,11 @@ html {
 body {
     color: white;
     background-color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.num {
+    font-family: 'FeDP'; 
 }
 
 h1,
@@ -44,4 +52,21 @@ a {
 button {
     font-family: inherit;
     cursor: pointer;
+}
+
+
+.simplebar-track.simplebar-vertical {
+    width: 3px!important;
+    background-color: gray;
+    overflow: visible;
+}
+
+.simplebar-scrollbar.simplebar-visible::before {
+    opacity: 1!important;
+    width: 5px;
+    background-color: white;
+    top: 0px;
+    bottom: 0px;
+    left: -1px;
+    right: 0px;
 }

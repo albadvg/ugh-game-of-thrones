@@ -16,8 +16,8 @@ const Timeline = () => {
     useEffect(() => {
         let maxAgeAux = 0;
         let minAgeAux = 800;
-        characters.length && characters.forEach(char => char.age > maxAgeAux && char.age !== null ? maxAgeAux = char.age : maxAgeAux = maxAgeAux);
-        characters.length && characters.forEach(char => char.age < minAgeAux && char.age !== null ? minAgeAux = char.age : minAgeAux = minAgeAux);
+        characters.length && characters.forEach(char => char.age > maxAgeAux && char.age !== null && (maxAgeAux = char.age));
+        characters.length && characters.forEach(char => char.age < minAgeAux && char.age !== null && (minAgeAux = char.age));
         setMaxAge(maxAgeAux);
         setMinAge(minAgeAux);
     }, [characters]);
@@ -32,43 +32,45 @@ const Timeline = () => {
     }
 
     return (
-        <>    
-            <SimpleBar style={{ maxHeight: 600 }}>
-                <div className="tmline">
-                    <div className="tmline-count">
-                        <div className="tmline-count-circle" onClick={changeOrder}>
-                            <span className="tmline-count-circle__num">{age > 0 && age}</span>
+        <>   
+            <section className="page">       
+                <SimpleBar style={{ maxHeight: '65vh' }} minSize={20} autoHide={false}>
+                    <div className="tmline">
+                        <div className="tmline-count">
+                            <div className="tmline-count-circle" onClick={changeOrder}>
+                                <span className="tmline-count-circle__num">{age > 0 && age}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div className="tmline-chars">
-                        <div className="tmline-chars-aux1"><div className="tmline-chars-aux1__arrow" ref={arrowRef}></div></div>
-                        <div className="tmline-chars-aux2"></div>
-                            {age === minAge ? 
-                                characters.sort((a, b) => a.age - b.age).map((char, i) => {
-                                    return(
-                                    <div key={i} className="tmline-chars-char">
-                                        <p className="tmline-chars-char__age">{char.age}</p>
-                                        <h4 className="tmline-chars-char__name">{char.name}</h4>
-                                        <img src={char.image} alt={char.name}  className="tmline-chars-char__img"/>
-
-                                    </div>
-                                )})
-
-                                : characters.sort((a, b) => a.age + b.age).map((char, i) => {
-                                    return(
+                        <div className="tmline-chars">
+                            <div className="tmline-chars-aux1"><div className="tmline-chars-aux1__arrow" ref={arrowRef}></div></div>
+                            <div className="tmline-chars-aux2"></div>
+                                {age === minAge ? 
+                                    //si la edad en el círculo es la mímina, ordenar de menor a mayor...
+                                    characters.sort((a, b) => a.age - b.age).map((char, i) => {
+                                        return(
                                         <div key={i} className="tmline-chars-char">
                                             <p className="tmline-chars-char__age">{char.age}</p>
                                             <h4 className="tmline-chars-char__name">{char.name}</h4>
-                                            <img src={char.image} alt={char.name} className="tmline-chars-char__img"/>
-
+                                            <img src={char.image} alt={char.name}  className="tmline-chars-char__img"/>
                                         </div>
-                                )})
-                            }
+                                    )})
+                                    //si es la máxima, ordenar de mayor a menor
+                                    : characters.sort((a, b) => a.age + b.age).map((char, i) => {
+                                        return(
+                                            <div key={i} className="tmline-chars-char">
+                                                <p className="tmline-chars-char__age num">{char.age}</p>
+                                                <h4 className="tmline-chars-char__name">{char.name}</h4>
+                                                <img src={char.image} alt={char.name} className="tmline-chars-char__img"/>
+
+                                            </div>
+                                    )})
+                                }
+                        </div>
+
                     </div>
 
-                </div>
-
-            </SimpleBar>
+                </SimpleBar>
+            </section>
             <Nav></Nav>
         </>
     )

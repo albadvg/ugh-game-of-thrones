@@ -7,7 +7,7 @@ import Houses from "./pages/Houses/Houses"
 import Timeline from "./pages/Timeline/Timeline"
 import DetailCharacter from "./pages/DetailCharacter/DetailCharacter"
 import DetailHouse from "./pages/DetailHouse/DetailHouse"
-import Nav from "./components/Nav/Nav"
+
 
 function App() {
     return (
