@@ -1,12 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.scss"
-import Nav from "./components/Nav/Nav"
+
 import Home from "./pages/Home/Home"
 import Characters from "./pages/Characters/Characters"
 import Houses from "./pages/Houses/Houses"
 import Timeline from "./pages/Timeline/Timeline"
 import DetailCharacter from "./pages/DetailCharacter/DetailCharacter"
 import DetailHouse from "./pages/DetailHouse/DetailHouse"
+import Nav from "./components/Nav/Nav"
 
 function App() {
     return (
