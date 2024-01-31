@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next"
 import './Home.scss';
 // import SimpleBar from "simplebar-react";
 import 'simplebar-react/dist/simplebar.min.css';
+import Header from "../../components/Header/Header";
+
 
 const Home = () => {
     const { t } = useTranslation()
@@ -17,6 +19,7 @@ const Home = () => {
 
     return (
         <div className="home">
+          
             {/* <SimpleBar style={{ maxHeight: 300 }}>
                 <h1>{t("titulo")}</h1>
                 <button onClick={changeLanguage}>cambiar</button>
@@ -24,6 +27,12 @@ const Home = () => {
 
             </SimpleBar> */}
             <h1 className="home__title">{t("titulo")}</h1>
+            
+            <Header></Header>
+           <div>
+          
+           </div>
+     
         </div>
     )
 }

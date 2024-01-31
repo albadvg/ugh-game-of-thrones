@@ -8,9 +8,11 @@ import Timeline from "./pages/Timeline/Timeline"
 import DetailCharacter from "./pages/DetailCharacter/DetailCharacter"
 import DetailHouse from "./pages/DetailHouse/DetailHouse"
 
+
 function App() {
     return (
         <>
+       
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home></Home>}></Route>
@@ -20,6 +22,9 @@ function App() {
                     <Route path="/characters/:id" element={<DetailCharacter></DetailCharacter>}></Route>
                     <Route path="/houses/:id" element={<DetailHouse></DetailHouse>}></Route>
                 </Routes>
+
+       
+              
             </BrowserRouter>
         </>
     )
