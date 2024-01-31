@@ -22,7 +22,7 @@ const Houses = () => {
     return (
         <>
             <section className="houses-page">
-                <SimpleBar style={{ maxHeight: "70vh" }}>
+                <SimpleBar style={{ maxHeight: "70vh" }} minSize={20} autoHide={false}>
                     <div className="houses-container">
                         {houses.map((house, index) => {
                             return (
