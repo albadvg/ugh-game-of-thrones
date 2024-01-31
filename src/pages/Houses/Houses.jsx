@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react"
 import Nav from "../../components/Nav/Nav"
 import axios from "axios"
+import Search from "../../components/Search/Search"
 
 const baseUrl = "https://got-json-api.vercel.app/"
 
 const Houses = () => {
-    const [houses, setHouses] = useState([])
+    const [houses, setHouses] = useState([]);
 
     useEffect(() => {
         const getHouses = async () => {
@@ -19,11 +20,11 @@ const Houses = () => {
     return (
         <>
             <div>
-                <h1>Hola soy una pagina</h1>
+            <Search></Search>
             </div>
             <Nav></Nav>
         </>
     )
-}
 
+}
 export default Houses

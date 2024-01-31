@@ -6,6 +6,7 @@ import 'simplebar-react/dist/simplebar.min.css';
 
 
 
+
 const Home = () => {
     const { t } = useTranslation()
     // i18n 
@@ -28,7 +29,6 @@ const Home = () => {
             </SimpleBar> */}
         
             <h1 className="home__title">{t("titulo")}</h1>
-            
            
            <div>
           
