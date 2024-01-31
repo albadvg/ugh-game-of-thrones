@@ -1,17 +1,17 @@
-import { useContext , useEffect, useRef, useState} from "react";
+import {  useEffect, useRef, useState} from "react";
 import SimpleBar from "simplebar-react";
 import 'simplebar-react/dist/simplebar.min.css';
 import './Timeline.scss';
-import { GotContext } from "../../context/context";
 import Nav from "../../components/Nav/Nav";
+import axios from "axios"
 
 const Timeline = () => {
     const [characters, setCharacters] = useState([])
-
+    
     //petición de personajes
     useEffect(() => {
         const getCharacters = async () => {
-            const charactersApi = await axios.get(`${baseUrl}characters`)
+            const charactersApi = await axios.get('https://got-json-api.vercel.app/characters')
             setCharacters(charactersApi.data)
         }
         getCharacters()
@@ -19,12 +19,14 @@ const Timeline = () => {
 
     //referencia de la flecha
     const arrowRef = useRef();
-    
+
     //sacar edad mínima y máxima de los personajes
     let [maxAge, setMaxAge] = useState(0);
     let [minAge, setMinAge] = useState(0);
     
-    
+    characters.length && characters.forEach(char => char.age > maxAge && char.age !== null && (maxAge = char.age));
+    characters.length && characters.forEach(char => char.age < minAge && char.age !== null && (minAge = char.age));
+
     useEffect(() => {
         let maxAgeAux = 0;
         let minAgeAux = 800;
