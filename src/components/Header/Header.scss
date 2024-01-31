@@ -3,9 +3,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: 25px;
+    gap: 10px;
 
     &--img{
         width: 60px;
-        padding-left: 30px;
     }
 }

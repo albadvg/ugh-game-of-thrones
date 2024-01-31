@@ -15,7 +15,7 @@ const resources = {
             lema: "MOTTO",
             sede: "SEAT",
             region: "REGION",
-            alianzas: "ALLEGIANCES",
+            alianzas: "ALLIANCES",
             religion: "RELIGION",
             fundacion: "FUNDATION",
             casa: "HOUSE",
