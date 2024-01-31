@@ -7,7 +7,7 @@ import axios from "axios"
 
 const Timeline = () => {
     const [characters, setCharacters] = useState([])
-    
+
     //petición de personajes
     useEffect(() => {
         const getCharacters = async () => {
@@ -15,21 +15,21 @@ const Timeline = () => {
             setCharacters(charactersApi.data)
         }
         getCharacters()
+
     }, [])
 
     //referencia de la flecha
     const arrowRef = useRef();
 
     //sacar edad mínima y máxima de los personajes
+    
     let [maxAge, setMaxAge] = useState(0);
     let [minAge, setMinAge] = useState(0);
-    
-    characters.length && characters.forEach(char => char.age > maxAge && char.age !== null && (maxAge = char.age));
-    characters.length && characters.forEach(char => char.age < minAge && char.age !== null && (minAge = char.age));
 
     useEffect(() => {
         let maxAgeAux = 0;
         let minAgeAux = 800;
+        
         characters.length && characters.forEach(char => char.age > maxAgeAux && char.age !== null && (maxAgeAux = char.age));
         characters.length && characters.forEach(char => char.age < minAgeAux && char.age !== null && (minAgeAux = char.age));
         setMaxAge(maxAgeAux);
@@ -37,7 +37,7 @@ const Timeline = () => {
     }, [characters]);
 
     //variable de estado para la edad, con estado inicial = a la edad mínima
-    const [age, setAge] = useState(minAge);
+    const [age, setAge] = useState(20);
 
     //cambiar el orden al clicar en la edad min o max
     const changeOrder = () => {
@@ -52,11 +52,11 @@ const Timeline = () => {
                     <div className="tmline">
                         <div className="tmline-count">
                             <div className="tmline-count-circle" onClick={changeOrder}>
-                                <span className="tmline-count-circle__num">{age > 0 && age}</span>
+                                <span className="tmline-count-circle__num">{age}</span>
                             </div>
                         </div>
                         <div className="tmline-chars">
-                            <div className="tmline-chars-aux1"><div className="tmline-chars-aux1__arrow" ref={arrowRef}></div></div>
+                            <div className="tmline-chars-aux1"><img src="/images/icons/chevron-abajo.png" className="tmline-chars-aux1__arrow" ref={arrowRef} alt="arrow-icon"/></div>
                             <div className="tmline-chars-aux2"></div>
                                 {age === minAge ? 
                                     //si la edad en el círculo es la mímina, ordenar de menor a mayor...
