@@ -12,11 +12,11 @@ const DetailCharacter = () => {
 
     //petición de personajes
     useEffect(() => {
-        const getCharacters = async () => {
+        const getCharacter = async () => {
             const charactersApi = await axios.get(`https://got-json-api.vercel.app/characters/${id}`)
             setCharacter(charactersApi.data)
         }
-        getCharacters()
+        getCharacter()
 
     }, [id])
 
