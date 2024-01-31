@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.scss"
-import Nav from "./components/Nav/Nav"
+
 import Home from "./pages/Home/Home"
 import Characters from "./pages/Characters/Characters"
 import Houses from "./pages/Houses/Houses"
@@ -22,7 +22,6 @@ function App() {
                     <Route path="/characters/:id" element={<DetailCharacter></DetailCharacter>}></Route>
                     <Route path="/houses/:id" element={<DetailHouse></DetailHouse>}></Route>
                 </Routes>
-
 
                 <Nav></Nav>
               
