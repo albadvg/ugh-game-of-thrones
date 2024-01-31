@@ -7,6 +7,7 @@ import Houses from "./pages/Houses/Houses"
 import Timeline from "./pages/Timeline/Timeline"
 import DetailCharacter from "./pages/DetailCharacter/DetailCharacter"
 import DetailHouse from "./pages/DetailHouse/DetailHouse"
+import Nav from "./components/Nav/Nav"
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/characters/:id" element={<DetailCharacter></DetailCharacter>}></Route>
                     <Route path="/houses/:id" element={<DetailHouse></DetailHouse>}></Route>
                 </Routes>
+                <Nav></Nav>
             </BrowserRouter>
         </>
     )
