@@ -23,7 +23,7 @@ function App() {
                     <Route path="/houses/:id" element={<DetailHouse></DetailHouse>}></Route>
                 </Routes>
 
-                <Nav></Nav>
+       
               
             </BrowserRouter>
         </>
