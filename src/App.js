@@ -21,7 +21,7 @@ function App() {
                     <Route path="/characters/:id" element={<DetailCharacter></DetailCharacter>}></Route>
                     <Route path="/houses/:id" element={<DetailHouse></DetailHouse>}></Route>
                 </Routes>
-                <Nav></Nav>
+               
             </BrowserRouter>
         </>
     )
