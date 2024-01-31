@@ -6,18 +6,18 @@ export const GotContext = createContext()
 const baseUrl = "http://localhost:3000/"
 
 export const GotContextProvider = ({ children }) => {
-    const [characters, setCharacters] = useState([])
+    // const [characters, setCharacters] = useState([])
     const [houses, setHouses] = useState([])
 
     const filter = ""
 
-    useEffect(() => {
-        const getCharacters = async () => {
-            const charactersApi = await axios.get(`${baseUrl}characters`);
-            setCharacters(charactersApi.data)
-        }
-        getCharacters()
-    }, [filter])
+    // useEffect(() => {
+    //     const getCharacters = async () => {
+    //         const charactersApi = await axios.get(`${baseUrl}characters`);
+    //         setCharacters(charactersApi.data)
+    //     }
+    //     getCharacters()
+    // }, [filter])
 
     useEffect(() => {
         const getHouses = async () => {
@@ -27,5 +27,5 @@ export const GotContextProvider = ({ children }) => {
         getHouses()
     }, [])
 
-    return <GotContext.Provider value={{ characters, houses }}>{children}</GotContext.Provider>
+    // return <GotContext.Provider value={{ characters, houses }}>{children}</GotContext.Provider>
 }

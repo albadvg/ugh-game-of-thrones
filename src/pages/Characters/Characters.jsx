@@ -1,11 +1,21 @@
-import React, { useContext } from "react"
-import { GotContext } from "../../context/context"
+import React, { useEffect, useState } from "react"
 import Nav from "../../components/Nav/Nav"
 import "./Characters.scss"
+import axios from "axios"
+
+const baseUrl = "https://got-json-api.vercel.app/"
 
 const Characters = () => {
-    const { characters } = useContext(GotContext)
-    console.log(characters)
+    const [characters, setCharacters] = useState([])
+    const filter = ""
+
+    useEffect(() => {
+        const getCharacters = async () => {
+            const charactersApi = await axios.get(`${baseUrl}characters`)
+            setCharacters(charactersApi.data)
+        }
+        getCharacters()
+    }, [filter])
 
     return (
         <>
