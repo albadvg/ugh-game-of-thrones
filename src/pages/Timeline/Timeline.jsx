@@ -6,12 +6,24 @@ import { GotContext } from "../../context/context";
 import Nav from "../../components/Nav/Nav";
 
 const Timeline = () => {
-    //traer personajes del context
-    const  {characters} = useContext(GotContext);
+    const [characters, setCharacters] = useState([])
+
+    //petición de personajes
+    useEffect(() => {
+        const getCharacters = async () => {
+            const charactersApi = await axios.get(`${baseUrl}characters`)
+            setCharacters(charactersApi.data)
+        }
+        getCharacters()
+    }, [])
+
+    //referencia de la flecha
     const arrowRef = useRef();
+    
     //sacar edad mínima y máxima de los personajes
     let [maxAge, setMaxAge] = useState(0);
     let [minAge, setMinAge] = useState(0);
+    
     
     useEffect(() => {
         let maxAgeAux = 0;
