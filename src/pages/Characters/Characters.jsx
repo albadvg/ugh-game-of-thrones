@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 import Nav from "../../components/Nav/Nav"
 import "./Characters.scss"
 import axios from "axios"
+import SimpleBar from "simplebar-react"
+import "simplebar-react/dist/simplebar.min.css"
 
 const baseUrl = "https://got-json-api.vercel.app/"
 
@@ -19,14 +21,18 @@ const Characters = () => {
 
     return (
         <>
-            <section className="characters__container">
-                {characters.map((character, index) => {
-                    return (
-                        <div key={index} className="character__card">
-                            <img src={character.image} alt={character.name}></img>
-                        </div>
-                    )
-                })}
+            <section className="character-page">
+                <SimpleBar style={{ maxHeight: "70vh" }}>
+                    <div className="characters-container">
+                        {characters.map((character, index) => {
+                            return (
+                                <div key={index} className="character-card">
+                                    <img src={character.image} alt={character.name}></img>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </SimpleBar>
             </section>
             <Nav></Nav>
         </>
