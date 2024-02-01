@@ -1,11 +1,13 @@
+import { useTranslation } from 'react-i18next';
 import './Detail.scss';
 import SimpleBar from "simplebar-react"
 import "simplebar-react/dist/simplebar.min.css"
 
 const Detail = ({detail , houseImg}) => {
-console.log(houseImg)
-  return (
 
+    const { t } = useTranslation()  
+  return (
+    // {t("titulo")}
     <>
 
         { detail.id ? (
@@ -17,7 +19,7 @@ console.log(houseImg)
                 <div className='detail-props'>
                     {Object.keys(detail).filter(k => k !== 'id' && k !== 'name' && k !== 'image').map((key, i) => (
                         <div className='detail-props-prop' key={i}>
-                            <h3 className='detail-props-prop__title'>{key}</h3>
+                            <h3 className='detail-props-prop__title'>{t(key)}</h3>
                             <SimpleBar style={{ maxHeight: "180px" }}>
                                 <ul className='detail-props-prop-ul'>
                                     {detail[key] && (
