@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next"
 import logo from '../../assets/house.png'
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Search from '../Search/Search';
 
 const Header = () => {
   const { i18n } = useTranslation()
@@ -30,6 +31,8 @@ const Header = () => {
 
         {/[0-9]$/.test(useLocation().pathname) &&  <span className='header__volver' onClick={volver}><img src="/images/icons/flecha.png" alt='volver' className='header__arrow'/>Volver</span>}
         <p></p>
+
+        <Search/>
 
         <div className='header-iconos'>
         {useLocation().pathname !== `/` && <Link to="/"><img className='header-iconos__img header-iconos__img--filter' src={logo} alt='home'></img></Link>}

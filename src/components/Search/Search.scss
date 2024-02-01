@@ -1,5 +1,8 @@
 .form{
-    padding-left: 10%;
+    position: absolute;
+    left: 45px;
+    top: 30px;
+
       &--buscador{
         background: url('../../assets/search.png') no-repeat 0px 8px;
         background-size: 18px;
