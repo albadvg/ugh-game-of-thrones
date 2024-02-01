@@ -4,10 +4,7 @@ import { useParams } from "react-router-dom"
 import axios from 'axios';
 
 
-
-
 const DetailCharacter = () => {
-
 
     // const {id} = useParams();
     const id = 2;
@@ -21,10 +18,6 @@ const DetailCharacter = () => {
             try {
                 const charactersApi = await axios.get(`https://got-json-api.vercel.app/characters/${id}`)
                 setCharacter(charactersApi.data)
-                
-                
-
-                
 
             } catch (error) {
                 console.log(error.message);
@@ -52,10 +45,6 @@ const DetailCharacter = () => {
         }
     }, [character])
 
-
-
-    
-    
 
     return (
         <div>
