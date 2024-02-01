@@ -4,6 +4,7 @@ import axios from "axios"
 import Search from "../../components/Search/Search"
 import { Link } from "react-router-dom"
 import SimpleBar from "simplebar-react"
+import "./Houses.scss"
 
 const baseUrl = "https://got-json-api.vercel.app/"
 
@@ -26,7 +27,7 @@ const Houses = () => {
                     <div className="houses-container">
                         {houses.map((house, index) => {
                             return (
-                                <Link to={`/houses/${house.id}}`}>
+                                <Link to={`/houses/${house.id}`}>
                                     <div key={index} className="houses-card">
                                         <img src={house.image} alt={house.name}></img>
                                     </div>
