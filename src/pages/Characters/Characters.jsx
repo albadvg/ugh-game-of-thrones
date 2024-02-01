@@ -23,7 +23,7 @@ const Characters = () => {
     return (
         <>
             <section className="character-page">
-                <SimpleBar style={{ maxHeight: "70vh" }} minSize={20} autoHide={false}>
+                <SimpleBar style={{ maxHeight: "65vh" }} minSize={20} autoHide={false}>
                     <div className="characters-container">
                         {characters.map((character, index) => {
                             return (
