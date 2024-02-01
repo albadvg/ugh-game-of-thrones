@@ -63,7 +63,7 @@ const Timeline = () => {
                                     characters.sort((a, b) => a.age - b.age).map((char, i) => {
                                         return(
                                         <div key={i} className="tmline-chars-char">
-                                            <p className="tmline-chars-char__age">{char.age}</p>
+                                            <p className="tmline-chars-char__age num">{char.age}</p>
                                             <h4 className="tmline-chars-char__name">{char.name}</h4>
                                             <img src={char.image} alt={char.name}  className="tmline-chars-char__img"/>
                                         </div>
