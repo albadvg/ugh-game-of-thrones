@@ -30,6 +30,7 @@ const Characters = () => {
                                 <Link to="/DetailCharacter">
                                     <div key={index} className="character-card">
                                         <img src={character.image} alt={character.name}></img>
+                                        <h3 className="character--name">{character.name}</h3>
                                     </div>
                                 </Link>
                             )

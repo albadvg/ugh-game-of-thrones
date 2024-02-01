@@ -12,7 +12,16 @@
     row-gap: 50px;
     column-gap: 20px;
     padding: 0px 130px 200px 130px;
+
+    .houses-title {
+        color: white;
+        background-color: transparent;
+        font-size: 0.8rem;
+        margin-top: 10px;
+        text-align: center;
+    }
 }
+
 .houses-card {
     width: 200px;
     height: 250px;
