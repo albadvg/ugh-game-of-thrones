@@ -28,6 +28,7 @@ const Houses = () => {
                                     <div key={index} className="houses-card">
                                         <img src={house.image} alt={house.name}></img>
                                     </div>
+                                    <h3 className="houses-title">{house.name}</h3>
                                 </Link>
                             )
                         })}
