@@ -1,4 +1,4 @@
-.banderas{
+.banderas {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -10,7 +10,16 @@
     padding: 25px;
     gap: 10px;
 
-    &--img{
+    &--img {
         width: 60px;
+    }
+}
+
+.house {
+    display: flex;
+
+    &--img {
+        width: 52px;
+        filter: invert(100%);
     }
 }
