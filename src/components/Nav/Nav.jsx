@@ -1,22 +1,22 @@
 import React from "react"
 import { useTranslation } from "react-i18next"
 import "./Nav.scss"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const Nav = () => {
     const { t } = useTranslation()
 
     return (
         <div className="nav__container">
-            <Link to="/characters">
+            <NavLink to="/characters" className={({ isActive }) => isActive && "navActive"}>
                 <h2>{t("characters")}</h2>
-            </Link>
-            <Link to="/houses">
+            </NavLink>
+            <NavLink to="/houses" className={({ isActive }) => isActive && "navActive"}>
                 <h2>{t("houses")}</h2>
-            </Link>
-            <Link to="/timeline">
+            </NavLink>
+            <NavLink to="/timeline" className={({ isActive }) => isActive && "navActive"}>
                 <h2>{t("timeline")}</h2>
-            </Link>
+            </NavLink>
         </div>
     )
 }
