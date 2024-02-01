@@ -5,6 +5,7 @@ import "./Header.scss";
 import { useTranslation } from "react-i18next"
 import logo from '../../assets/house.png'
 import { Link, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const { i18n } = useTranslation()
@@ -17,14 +18,25 @@ const Header = () => {
       i18n.changeLanguage("es")
   }
 
+  const navigate = useNavigate();
+
+  const volver = () => {
+    navigate(-1);
+  }
 
   return (
     <>
-    <nav className='banderas'>
-    {useLocation().pathname !== `/` && <Link to="/"><img className='house--img' src={logo} alt='home'></img></Link>}
-    <img onClick={changeLanguageEs} className='banderas--img' src={españa} alt='español'></img>
-    <img onClick={changeLanguageEn} className='banderas--img' src={uk} alt='ingles'></img>
-  </nav>
+    <nav className='header'>
+
+        {/[0-9]$/.test(useLocation().pathname) &&  <span className='header__volver' onClick={volver}><img src="/images/icons/flecha.png" alt='volver' className='header__arrow'/>Volver</span>}
+        <p></p>
+
+        <div className='header-iconos'>
+        {useLocation().pathname !== `/` && <Link to="/"><img className='header-iconos__img header-iconos__img--filter' src={logo} alt='home'></img></Link>}
+        <img onClick={changeLanguageEs} className='header-iconos__img' src={españa} alt='español'></img>
+        <img onClick={changeLanguageEn} className='header-iconos__img' src={uk} alt='ingles'></img>
+      </div>
+    </nav>
   </>
   )
 }
