@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react"
 import Nav from "../../components/Nav/Nav"
 import axios from "axios"
 import Search from "../../components/Search/Search"
+import { Link } from "react-router-dom"
+import SimpleBar from "simplebar-react"
 
 const baseUrl = "https://got-json-api.vercel.app/"
 
 const Houses = () => {
-    const [houses, setHouses] = useState([]);
+    const [houses, setHouses] = useState([])
 
     useEffect(() => {
         const getHouses = async () => {
@@ -24,7 +26,7 @@ const Houses = () => {
                     <div className="houses-container">
                         {houses.map((house, index) => {
                             return (
-                                <Link to="/DetailHouses">
+                                <Link to={`/houses/${house.id}}`}>
                                     <div key={index} className="houses-card">
                                         <img src={house.image} alt={house.name}></img>
                                     </div>
@@ -38,6 +40,5 @@ const Houses = () => {
             <Nav></Nav>
         </>
     )
-
 }
 export default Houses
