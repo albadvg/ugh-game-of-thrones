@@ -4,9 +4,11 @@ import SimpleBar from "simplebar-react"
 import "simplebar-react/dist/simplebar.min.css"
 
 const Detail = ({detail , houseImg}) => {
-
     const { t } = useTranslation()  
-  return (
+
+    
+
+    return (
 
     <>
         { detail.id ? (
@@ -27,7 +29,7 @@ const Detail = ({detail , houseImg}) => {
                                                 <li key={j}>{elem}</li>
                                             ))
                                         ) : (
-                                            key === 'house' 
+                                            key === 'house'
                                             ? <img src={houseImg} alt={detail[key]} className='detail-props-prop__house'/>
                                             : <li>{detail[key]}</li>
                                         )
@@ -45,7 +47,7 @@ const Detail = ({detail , houseImg}) => {
 
         }
     </>
-    
+
   )
 }
 

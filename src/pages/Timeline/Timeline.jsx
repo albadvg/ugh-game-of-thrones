@@ -49,7 +49,6 @@ const Timeline = () => {
 
     return (
         <>   
-        {console.log(age)}
             <section className="page">       
                 <SimpleBar style={{ maxHeight: '65vh' }} autoHide={false}>
                     <div className="tmline">

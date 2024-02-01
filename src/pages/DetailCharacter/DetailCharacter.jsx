@@ -5,9 +5,8 @@ import axios from "axios"
 
 const DetailCharacter = () => {
     const { id } = useParams()
-    console.log(id)
+
     const [character, setCharacter] = useState({})
-    const [houses, setHouses] = useState([])
     const [houseImg, setHouseImg] = useState("")
 
     //petición de personajes
@@ -23,22 +22,27 @@ const DetailCharacter = () => {
         getData()
     }, [id])
 
-    //
     useEffect(() => {
         const getHouses = async () => {
-            const housesApi = await axios.get(`https://got-json-api.vercel.app/houses`)
-            setHouses(housesApi.data)
-        }
-        getHouses()
+          try {
+            const houseName = character.house;
+    
+            const response = await axios.get('https://got-json-api.vercel.app/houses');
+            const house = response.data.find((house) => house.name === houseName);
+    
+            if (house) {
+              setHouseImg(house.image);
+            } else {
+              console.error(`No se encontró la casa para el personaje ${character.name}`);
+            }
+          } catch (error) {
+            console.error('Error al obtener las casas', error);
+          }
+        };
+    
+        getHouses();
+      }, [character]);
 
-        const houseName = character.house
-        if (houses.length) {
-            let house
-            house = houses.find((house) => house.name === houseName).image
-            setHouseImg(house)
-            console.log(house)
-        }
-    }, [character])
 
     return (
         <div>
