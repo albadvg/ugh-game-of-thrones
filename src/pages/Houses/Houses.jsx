@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react"
 import Nav from "../../components/Nav/Nav"
 import axios from "axios"
-import "./Houses.scss"
-import SimpleBar from "simplebar-react"
-import "simplebar-react/dist/simplebar.min.css"
-import { Link } from "react-router-dom"
+import Search from "../../components/Search/Search"
 
 const baseUrl = "https://got-json-api.vercel.app/"
 
 const Houses = () => {
-    const [houses, setHouses] = useState([])
+    const [houses, setHouses] = useState([]);
 
     useEffect(() => {
         const getHouses = async () => {
@@ -22,6 +19,7 @@ const Houses = () => {
 
     return (
         <>
+<<<<<<< HEAD
             <section className="houses-page">
                 <SimpleBar style={{ maxHeight: "70vh" }} minSize={20} autoHide={false}>
                     <div className="houses-container">
@@ -37,9 +35,14 @@ const Houses = () => {
                     </div>
                 </SimpleBar>
             </section>
+=======
+            <div>
+            <Search></Search>
+            </div>
+>>>>>>> search
             <Nav></Nav>
         </>
     )
-}
 
+}
 export default Houses

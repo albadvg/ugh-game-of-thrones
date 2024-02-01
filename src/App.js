@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.scss"
-
 import Home from "./pages/Home/Home"
 import Characters from "./pages/Characters/Characters"
 import Houses from "./pages/Houses/Houses"
@@ -13,8 +12,8 @@ import Header from "./components/Header/Header";
 function App() {
     return (
         <>
-        <Header></Header>
             <BrowserRouter>
+            <Header></Header>
                 <Routes>
                     <Route path="/" element={<Home></Home>}></Route>
                     <Route path="/characters" element={<Characters></Characters>}></Route>
@@ -23,8 +22,6 @@ function App() {
                     <Route path="/characters/:id" element={<DetailCharacter></DetailCharacter>}></Route>
                     <Route path="/houses/:id" element={<DetailHouse></DetailHouse>}></Route>
                 </Routes>
-
-       
 
             </BrowserRouter>
         </>

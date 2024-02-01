@@ -5,6 +5,7 @@ import "./Home.scss"
 import "simplebar-react/dist/simplebar.min.css"
 import Nav from "../../components/Nav/Nav"
 
+
 const Home = () => {
     const { t } = useTranslation()
     // i18n
