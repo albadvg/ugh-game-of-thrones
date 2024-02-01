@@ -7,9 +7,8 @@ const Detail = ({detail , houseImg}) => {
 
     const { t } = useTranslation()  
   return (
-    // {t("titulo")}
-    <>
 
+    <>
         { detail.id ? (
             <div className='detail'>
                 <div className='detail-fig'>
@@ -46,6 +45,7 @@ const Detail = ({detail , houseImg}) => {
 
         }
     </>
+    
   )
 }
 
