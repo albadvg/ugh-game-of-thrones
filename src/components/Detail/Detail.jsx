@@ -2,7 +2,8 @@ import './Detail.scss';
 import SimpleBar from "simplebar-react"
 import "simplebar-react/dist/simplebar.min.css"
 
-const Detail = ({detail}) => {
+const Detail = ({detail , houseImg}) => {
+console.log(houseImg)
   return (
 
     <>
@@ -25,7 +26,9 @@ const Detail = ({detail}) => {
                                                 <li key={j}>{elem}</li>
                                             ))
                                         ) : (
-                                            <li>{detail[key]}</li>
+                                            key === 'house' 
+                                            ? <img src={houseImg} alt={detail[key]} className='detail-props-prop__house'/>
+                                            : <li>{detail[key]}</li>
                                         )
                                     )}
                                 </ul>

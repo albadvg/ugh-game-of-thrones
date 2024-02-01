@@ -5,9 +5,10 @@
     align-items: center;
     margin-top: 100px;
     gap: 30px;
+    padding: 0 50px;
 
     &-fig {
-        max-width: 300px;
+        max-width: 250px;
 
         &__img {
             width: 100%;
@@ -18,7 +19,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        // width: clamp(400px, 80vw, 1200px);
         text-align: center;
         width: 100%;
         gap: 20px;
@@ -35,6 +35,12 @@
                 gap: 15px;
                 font-weight: lighter;
             }
+
+            &__house {
+                max-width: 100px;
+                margin: 0 auto;
+            }
         }
     }
 }
+
