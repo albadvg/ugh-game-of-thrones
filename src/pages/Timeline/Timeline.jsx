@@ -6,6 +6,7 @@ import Nav from "../../components/Nav/Nav";
 import axios from "axios"
 
 const Timeline = () => {
+    //vcariable de estado que recibirá los personajes
     const [characters, setCharacters] = useState([])
 
     //petición de personajes
@@ -18,26 +19,27 @@ const Timeline = () => {
 
     }, [])
 
-    //referencia de la flecha
-    const arrowRef = useRef();
-
     //sacar edad mínima y máxima de los personajes
-    
     let [maxAge, setMaxAge] = useState(0);
     let [minAge, setMinAge] = useState(0);
 
     useEffect(() => {
         let maxAgeAux = 0;
-        let minAgeAux = 800;
+        let minAgeAux = 401;
         
         characters.length && characters.forEach(char => char.age > maxAgeAux && char.age !== null && (maxAgeAux = char.age));
         characters.length && characters.forEach(char => char.age < minAgeAux && char.age !== null && (minAgeAux = char.age));
+
         setMaxAge(maxAgeAux);
         setMinAge(minAgeAux);
     }, [characters]);
 
     //variable de estado para la edad, con estado inicial = a la edad mínima
     const [age, setAge] = useState(20);
+
+    //referencia de la flecha
+    const arrowRef = useRef();
+
 
     //cambiar el orden al clicar en la edad min o max
     const changeOrder = () => {
@@ -47,8 +49,9 @@ const Timeline = () => {
 
     return (
         <>   
+        {console.log(age)}
             <section className="page">       
-                <SimpleBar style={{ maxHeight: '65vh' }} minSize={20} autoHide={false}>
+                <SimpleBar style={{ maxHeight: '65vh' }} autoHide={false}>
                     <div className="tmline">
                         <div className="tmline-count">
                             <div className="tmline-count-circle" onClick={changeOrder}>
@@ -60,7 +63,7 @@ const Timeline = () => {
                             <div className="tmline-chars-aux2"></div>
                                 {age === minAge ? 
                                     //si la edad en el círculo es la mímina, ordenar de menor a mayor...
-                                    characters.sort((a, b) => a.age - b.age).map((char, i) => {
+                                    characters.sort((a, b) => a.age > b.age ? 1 : -1).map((char, i) => {
                                         return(
                                         <div key={i} className="tmline-chars-char">
                                             <p className="tmline-chars-char__age num">{char.age}</p>
@@ -69,7 +72,7 @@ const Timeline = () => {
                                         </div>
                                     )})
                                     //si es la máxima, ordenar de mayor a menor
-                                    : characters.sort((a, b) => a.age + b.age).map((char, i) => {
+                                    : characters.sort((a, b) => a.age < b.age ? 1 : -1).map((char, i) => {
                                         return(
                                             <div key={i} className="tmline-chars-char">
                                                 <p className="tmline-chars-char__age num">{char.age}</p>
