@@ -19,7 +19,6 @@ const Houses = () => {
 
     return (
         <>
-<<<<<<< HEAD
             <section className="houses-page">
                 <SimpleBar style={{ maxHeight: "70vh" }} minSize={20} autoHide={false}>
                     <div className="houses-container">
@@ -35,11 +34,6 @@ const Houses = () => {
                     </div>
                 </SimpleBar>
             </section>
-=======
-            <div>
-            <Search></Search>
-            </div>
->>>>>>> search
             <Nav></Nav>
         </>
     )
