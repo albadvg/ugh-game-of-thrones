@@ -27,7 +27,7 @@ const Characters = () => {
                     <div className="characters-container">
                         {characters.map((character, index) => {
                             return (
-                                <Link to="/DetailCharacter">
+                                <Link to={`/characters/${character.id}}`}>
                                     <div key={index} className="character-card">
                                         <img src={character.image} alt={character.name}></img>
                                         <h3 className="character--name">{character.name}</h3>

@@ -9,13 +9,13 @@ const Nav = () => {
     return (
         <div className="nav__container">
             <Link to="/characters">
-                <h2>{t("personajes")}</h2>
+                <h2>{t("characters")}</h2>
             </Link>
             <Link to="/houses">
-                <h2>{t("casas")}</h2>
+                <h2>{t("houses")}</h2>
             </Link>
             <Link to="/timeline">
-                <h2>{t("cronologia")}</h2>
+                <h2>{t("timeline")}</h2>
             </Link>
         </div>
     )
