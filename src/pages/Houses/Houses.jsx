@@ -1,24 +1,38 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import Nav from "../../components/Nav/Nav"
 import axios from "axios"
 import Search from "../../components/Search/Search"
 import { Link } from "react-router-dom"
 import SimpleBar from "simplebar-react"
 import "./Houses.scss"
+import { Context } from "../../context/context"
 
 const baseUrl = "https://got-json-api.vercel.app/"
 
 const Houses = () => {
+
+    const {search} = useContext(Context);
+
     const [houses, setHouses] = useState([])
 
     useEffect(() => {
         const getHouses = async () => {
-            const housesApi = await axios.get(`${baseUrl}houses`)
+            let housesApi;
+            if(search.length) {
+                housesApi = await axios.get(`${baseUrl}houses?name=${search}`)
+            } else {
+                housesApi = await axios.get(`${baseUrl}houses`)
+            }
+
             setHouses(housesApi.data)
-            console.log(houses)
+            // console.log(houses)
         }
         getHouses()
-    }, [houses])
+    }, [search])
+
+
+        
+  
 
     return (
         <>
