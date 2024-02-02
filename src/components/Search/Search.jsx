@@ -15,6 +15,7 @@ export default function Search() {
   }
 
   const submitChange = (e) => { 
+    e.preventDefault();
     setSearch(searchTerm);
   }
 

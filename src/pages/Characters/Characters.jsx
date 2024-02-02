@@ -18,7 +18,13 @@ const Characters = () => {
 
     useEffect(() => {
         const getCharacters = async () => {
-            const charactersApi = await axios.get(`${baseUrl}characters?name=${search}`)
+            console.log('ola')
+            let charactersApi;
+            if(search.length) {
+                charactersApi = await axios.get(`${baseUrl}characters?name=${search}`)
+            } else {
+                charactersApi = await axios.get(`${baseUrl}characters`)
+            }
             ////////////////////////////////////////////////////////////////////////////
             //////////////////////      PREGUNTAR ABEL    //////////////////////////////
             setCharacters(charactersApi.data)
