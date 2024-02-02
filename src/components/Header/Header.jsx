@@ -32,7 +32,8 @@ const Header = () => {
         {/[0-9]$/.test(useLocation().pathname) &&  <span className='header__volver' onClick={volver}><img src="/images/icons/flecha.png" alt='volver' className='header__arrow'/>Volver</span>}
         <p></p>
 
-        <Search/>
+        {(useLocation().pathname === '/characters') && <Search/>}
+        
 
         <div className='header-iconos'>
         {useLocation().pathname !== `/` && <Link to="/"><img className='header-iconos__img header-iconos__img--filter' src={logo} alt='home'></img></Link>}

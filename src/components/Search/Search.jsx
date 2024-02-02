@@ -1,6 +1,6 @@
 import { t } from "i18next";
 import "./Search.scss";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { Context } from "../../context/context";
 
 export default function Search() {
