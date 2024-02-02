@@ -33,7 +33,7 @@ const Header = () => {
         <p></p>
 
         {(useLocation().pathname === '/characters') && <Search/>}
-        
+        {(useLocation().pathname === '/houses') && <Search/>}
 
         <div className='header-iconos'>
         {useLocation().pathname !== `/` && <Link to="/"><img className='header-iconos__img header-iconos__img--filter' src={logo} alt='home'></img></Link>}
