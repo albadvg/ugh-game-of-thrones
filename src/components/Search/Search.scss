@@ -1,0 +1,15 @@
+.form{
+    position: absolute;
+    left: 45px;
+    top: 30px;
+
+      &--buscador{
+        background: url('../../assets/search.png') no-repeat 0px 8px;
+        background-size: 18px;
+        width: 300px;
+        border: transparent;
+        border-bottom: solid 1px black;
+        padding: 10px 10px 10px 30px;
+        filter: invert(100%); 
+      }
+  }

@@ -1,11 +1,56 @@
-.banderas{
+.header {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: 25px 45px;
+    gap: 10px;
 
-    &--img{
-        width: 60px;
-        padding-left: 30px;
+
+    &__volver {
+        position: absolute;
+        top: 25px;
+        left: 45px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        cursor: pointer;
     }
+
+
+    &__arrow {
+        filter: invert(100%);
+        transform: rotate(180deg);
+        width: 25px;
+        margin-top: 3px;
+    }
+
+    &-iconos {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+
+        &__img {
+
+            cursor: pointer;
+
+            width: 40px;
+
+            &--filter {
+                width: 26px;
+                filter: invert(100%);
+            }
+
+            &:last-of-type {
+                width: 35px ;
+            }
+        }
+    }
+
 }
+
+
