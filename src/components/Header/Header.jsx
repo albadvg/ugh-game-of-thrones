@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import españa from '../../assets/esp.png';
 import uk from '../../assets/UK.png';
 import "./Header.scss";
@@ -7,10 +7,11 @@ import logo from '../../assets/house.png'
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Search from '../Search/Search';
+import { Context } from '../../context/context';
 
 const Header = () => {
   const { i18n } = useTranslation()
- 
+  const {setSearch} = useContext(Context);
   const changeLanguageEn = () => {
       i18n.changeLanguage("en")
   }
@@ -23,6 +24,7 @@ const Header = () => {
 
   const volver = () => {
     navigate(-1);
+    setSearch('');
   }
 
   return (
